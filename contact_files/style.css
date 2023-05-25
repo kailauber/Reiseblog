@@ -1,0 +1,324 @@
+html {
+  background-color: #0b0b0b;
+  font-family: 'Lato', sans-serif;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-top: 5px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form label {
+  font-size: 20px;
+  color: white;
+  margin-top: 20px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-bottom: 2px solid #fbd23b;
+  color: white;
+  font-size: 20px;
+  margin-top: 5px;
+  padding: 10px;
+  width: 50%;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+  outline: none;
+  border-bottom: 2px solid #fbd23b;
+}
+
+form button[type="submit"] {
+  background-color: transparent;
+  border: 2px solid #fbd23b;
+  border-radius: 5px;
+  color: #fbd23b;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+form button[type="submit"]:hover {
+  background-color: #fbd23b;
+  color: black;
+}
+
+#email {
+  background-color: #1d1d1d;
+  color: #fff;
+  border-bottom: 2px solid #fbd23b;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+
+/*scrollbar*/
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: rgb(81, 81, 81);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgb(81, 81, 81);
+}
+
+
+/*title*/
+
+#number {
+  font-size: 50px;
+}
+
+#title {
+  font-size: 25px;
+}
+
+p {
+  font-size: 20px;
+  color: white;
+}
+
+p2 {
+  font-size: 25px;
+  color: white;
+}
+
+p3 {
+  font-size: 22px;
+  color: white;
+}
+
+#space {
+  height: auto;
+  width: 800px;
+  margin: auto;
+  letter-spacing: 2px;
+  color: #fbd23b;
+  text-align: center;
+  padding-top: 50px;
+}
+
+@media only screen and (max-width: 425px) {
+  #space {
+      width: 350px;
+  }
+}
+
+.section {
+  padding-bottom: 50px;
+  padding-top: 25px
+}
+
+.toolsimg {
+  width: 50%;
+  margin: auto;
+  display: block;
+  padding-top: 25px;
+}
+
+@media only screen and (max-width: 425px) {
+  .toolsimg {
+      width: 80%;
+  }
+}
+
+.hobbiesimg {
+  display: block;
+  margin: auto;
+  width: 93%;
+}
+
+@media only screen and (max-width: 425px) {
+  .hobbiesimg {
+      width: 100%;
+  }
+}
+
+
+/*logo*/
+.logo {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 200px; /* adjust the size to fit your logo */
+  height: 200px; /* adjust the size to fit your logo */
+  overflow: hidden; /* hide any parts of the logo that fall outside the circle */
+}
+
+
+
+/*Drop-down Menu*/
+
+.dropbtn {
+  padding: 16px;
+  border: none;
+  margin-right: 15px;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: url("dropdown.png")
+}
+
+
+/* Dropdown button on hover & focus */
+
+.dropbtn:hover,
+.dropbtn:focus {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -moz-transition: all .30s;
+  -o-transition: all .30s;
+  -webkit-transition: all .30s;
+  transition: all .30s;
+  text-decoration: none;
+  outline: 0;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+  position: absolute;
+  top: 15px;
+  right: 0;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+  padding-top: 10px;
+  right: 0;
+  display: none;
+  position: absolute;
+  height: 100vh;
+  z-index: 1;
+}
+
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+  color: #fbd23b;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 20px;
+  border-bottom: 2px solid transparent;
+  border-top: 2px solid transparent;
+  letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 375px) {
+  .dropdown-content a {
+      background-color: rgba(0, 0, 0, 0.57);
+  }
+}
+
+
+/* Change color of dropdown links on hover */
+
+.dropdown-content a:hover {
+  border-bottom: 2px solid #fbd23b;
+  border-top: 2px solid #fbd23b;
+}
+
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+
+.show {
+  display: block;
+}
+
+
+/*particles*/
+
+#particles-js {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.footer {
+  letter-spacing: 3px;
+  font-weight: 1000;
+  color: #fbd23b;
+  text-align: center;
+  text-transform: uppercase;
+  background: #0B0B0B;
+  padding: 20px;
+  margin-right: 100px;
+  font-size: 13px;
+  width: 100%;
+}
+
+.footer a {
+  color: #fbd23b;
+  text-decoration: none;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwaPGR_p.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
