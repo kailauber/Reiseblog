@@ -69,12 +69,14 @@ p3 {
     letter-spacing: 2px;
     color: #fbd23b;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 250px;
 }
+
 
 @media only screen and (max-width: 425px) {
     #space {
         width: 350px;
+        padding-top: 250px;
     }
 }
 
@@ -227,6 +229,26 @@ p3 {
     font-size: 13px;
     width: 100%;
 }
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Make grid smaller */
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.image-grid img {
+    max-width: 100%; /* Ensure image does not overflow its container */
+    border: 1px solid #fbd23b; /* Add border to images */
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.image-grid img:hover {
+    transform: scale(1.05); /* Zoom in a little on hover */
+}
+
+
 
 .footer a {
     color: #fbd23b;
