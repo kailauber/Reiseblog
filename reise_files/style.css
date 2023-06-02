@@ -48,9 +48,11 @@ ul {
 }
 
 p {
+    text-align: center;
     font-size: 20px;
     color: white;
 }
+
 
 p2 {
     font-size: 25px;
@@ -229,13 +231,34 @@ p3 {
     font-size: 13px;
     width: 100%;
 }
+
+.gif-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.gif {
+    max-width: 100%;
+    border: 1px solid #fbd23b;
+
+}
+
+
+
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Make grid smaller */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
     gap: 10px;
     padding: 10px;
     box-sizing: border-box;
+    justify-content: center; 
+    align-items: center; 
 }
+
 
 .image-grid img {
     max-width: 100%; /* Ensure image does not overflow its container */
