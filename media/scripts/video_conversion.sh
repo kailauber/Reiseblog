@@ -1,6 +1,6 @@
 original_path=$(pwd)
 
-for videoDir in ../public/videos/* ../public/abstract/videos/*; do
+for videoDir in ../media/kreta/videos*; do
   cd "$original_path"
   if compgen -G "${videoDir}/original.*" > /dev/null; then
     echo "[INFO] Found original file in $videoDir."
@@ -11,7 +11,7 @@ for videoDir in ../public/videos/* ../public/abstract/videos/*; do
       -g 150 -tile-columns 4 -frame-parallel 1 -f webm -dash 1 \
       -an -sn -vf scale=-1:480 -b:v 1000k -dash 1 converted_480p.webm \
       -an -sn -vf scale=-1:720 -b:v 1500k -dash 1 converted_720p.webm \
-      -an -sn -vf scale=-1:720 -b:v 2500k -dash 1 converted_1080p.webm \
+      -an -sn -vf scale=-1:1080 -b:v 2500k -dash 1 converted_1080p.webm \
       -an -sn -b:v 7000k -dash 1 converted_original.webm
     echo "[INFO] Done"
     echo "[INFO] Generating Manifest"

@@ -7,13 +7,13 @@ html {
     padding-top: 5px;
 }
 
-ul {
-    list-style: none;
-  }
 /*scrollbar*/
 
  ::-webkit-scrollbar {
     width: 10px;
+}
+h2, ul, li {
+    color: white; 
 }
 
 
@@ -219,17 +219,34 @@ p3 {
     left: 0;
 }
 
+.impressum {
+    text-align: center;
+    padding: 1em; /* add some space around the text */
+}
+
 .footer {
-    letter-spacing: 3px;
-    font-weight: 1000;
+    letter-spacing: 1px;
+    font-weight: 500;
     color: #fbd23b;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: none;
     background: #0B0B0B;
-    padding: 20px;
-    margin-right: 100px;
-    font-size: 13px;
+    padding: 40px;
+    font-size: 14px;
     width: 100%;
+    border: 1px solid #fbd23b;
+
+}
+
+.footer a {
+    color: #fbd23b;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.footer a:last-child {
+    margin-bottom: 0;
 }
 
 .gif-container {
@@ -271,11 +288,30 @@ p3 {
     transform: scale(1.05); /* Zoom in a little on hover */
 }
 
+.image-grid video {
+    max-width: 100%; /* Ensure video does not overflow its container */
+    border: 1px solid #fbd23b; /* Add border to videos to match images */
+    box-sizing: border-box;
+    transition: 0.3s;
+    width: 100%; /* Make video fill its container */
+    height: auto; /* Let video height adjust automatically to keep aspect ratio */
+    object-fit: cover; /* Ensure video cover its container completely */
+}
 
+.image-grid video:hover {
+    transform: scale(1.05); /* Zoom in a little on hover */
+}
 
-.footer a {
-    color: #fbd23b;
-    text-decoration: none;
+@media only screen and (max-width: 1200px) {
+    .image-grid img, .image-grid video {
+        max-width: 90%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .image-grid img, .image-grid video {
+        max-width: 100%;
+    }
 }
 
 /* latin-ext */
