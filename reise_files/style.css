@@ -224,6 +224,23 @@ p3 {
     padding: 1em; /* add some space around the text */
 }
 
+.subtitle-btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 5px 10px;
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.subtitle-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+  
+
 .footer {
     letter-spacing: 1px;
     font-weight: 500;
@@ -264,6 +281,19 @@ p3 {
 
 }
 
+.video-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#videoKeller1Subtitles, #videoKeller2Subtitles, #videoKeller3Subtitles {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 5px;
+}
 
 
 .image-grid {
