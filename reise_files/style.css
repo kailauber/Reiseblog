@@ -224,7 +224,7 @@ p3 {
     padding: 1em; /* add some space around the text */
 }
 
-.subtitle-btn {
+.dash-btn {
     display: inline-block;
     margin: 10px;
     padding: 5px 10px;
@@ -235,7 +235,7 @@ p3 {
     text-decoration: none;
 }
 
-.subtitle-btn:hover {
+.dash-btn:hover {
     background-color: #333;
     color: #fff;
 }
@@ -280,7 +280,6 @@ p3 {
     border: 1px solid #fbd23b;
 
 }
-
 .video-container {
     display: flex;
     flex-direction: column;
@@ -288,7 +287,7 @@ p3 {
     align-items: center;
 }
 
-#videoKeller1Subtitles, #videoKeller2Subtitles, #videoKeller3Subtitles {
+#videoKellerSubtitles, #videoOsternAudio {
     display: flex;
     justify-content: center;
     gap: 5px;

@@ -7,6 +7,8 @@
     <link href="reise_files/style.css" rel="stylesheet" type="text/css" />
     <link href="contact_files/css.css" rel="stylesheet" />
     <link href="reise_files/big.png" rel="icon" />
+    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+
 </head>
 
 <body>
@@ -41,40 +43,38 @@
 
 
         <div class="video-container">
-            <video id="videoKeller1" controls>
+            <video id="videoKeller" controls>
                 <source src="media/kreta/videos/keller_final.mp4" type="video/mp4">
                 <track src="media/kreta/videos/keller_subtitle_de.vtt" kind="subtitles" srclang="de" label="German"
                     default>
                 <track src="media/kreta/videos/keller_subtitle_en.vtt" kind="subtitles" srclang="en" label="English">
                 <track src="media/kreta/videos/keller_subtitle_fr.vtt" kind="subtitles" srclang="fr" label="French">
             </video>
-            <div id="videoKeller1Subtitles">
-                <a href="javascript:void(0);" class="subtitle-btn"
+            <div id="videoKellerSubtitles">
+                <a href="javascript:void(0);" class="dash-btn"
                     onclick="switchSubtitleLanguage('videoKeller', 'de')">German</a>
-                <a href="javascript:void(0);" class="subtitle-btn"
+                <a href="javascript:void(0);" class="dash-btn"
                     onclick="switchSubtitleLanguage('videoKeller', 'en')">English</a>
-                <a href="javascript:void(0);" class="subtitle-btn"
+                <a href="javascript:void(0);" class="dash-btn"
                     onclick="switchSubtitleLanguage('videoKeller', 'fr')">French</a>
             </div>
         </div>
 
         <div class="video-container">
-            <video id="videoKeller2" controls>
-                <!-- Video source and tracks -->
-            </video>
-            <div id="videoKeller2Subtitles">
-                <!-- Subtitle buttons -->
+            <video id="videoLandung" controls></video>
+        </div>
+        <div class="video-container">
+            <video id="videoOstern" controls></video>
+            <div id="videoOsternAudio">
+                <a href="javascript:void(0);" class="dash-btn" onclick=switchAudioTrack(playerOstern,2)>Audio 1</a>
+                <a href="javascript:void(0);" class="dash-btn" onclick=switchAudioTrack(playerOstern,3)>Audio 2</a>
             </div>
+
         </div>
 
-        <div class="video-container">
-            <video id="videoKeller3" controls>
-                <!-- Video source and tracks -->
-            </video>
-            <div id="videoKeller3Subtitles">
-                <!-- Subtitle buttons -->
-            </div>
-        </div>
+
+
+    </div>
 
     </div>
     <div id="particles-js">
@@ -98,22 +98,40 @@
     <script src="reise_files/app.js" type="text/javascript"></script>
     <script src="reise_files/menu.js" type="text/javascript"></script>
     <script>
+        var playerOstern;
+        var playerLandung;
+
         function switchSubtitleLanguage(videoId, language) {
             var video = document.querySelector("#" + videoId);
-            var tracks = video.textTracks; // Use textTracks instead of track elements
+            var tracks = video.textTracks;
             for (var i = 0; i < tracks.length; i++) {
                 var track = tracks[i];
-                track.mode = 'disabled'; // Disable all tracks
+                track.mode = 'disabled';
                 if (track.language === language) {
-                    track.mode = 'showing'; // Show the track for the selected language
+                    track.mode = 'showing';
                 }
             }
         }
+        function switchAudioTrack(player, trackId) {
+            var audioTracks = player.getTracksFor('audio');
+            var idx = parseInt(trackId);
+            if (idx >= 0 && idx < audioTracks.length) {
+                player.setCurrentTrack(audioTracks[idx]);
+            }
+        }
+
 
         window.onload = function () {
             var video = document.getElementById('videoKeller');
-            video.load(); // Ensure the video and its associated tracks are loaded
-            switchSubtitleLanguage('videoKeller', 'de'); // Set default language
+            video.load();
+            switchSubtitleLanguage('videoKeller', 'de');
+
+            var urlOstern = 'media/kreta/videos/ostern/manifest.mpd';
+            var urlLandung = 'media/kreta/videos/landung/landung_final.mpd';
+            playerOstern = dashjs.MediaPlayer().create();
+            playerLandung = dashjs.MediaPlayer().create();
+            playerOstern.initialize(document.querySelector("#videoOstern"), urlOstern, true);
+            playerLandung.initialize(document.querySelector("#videoLandung"), urlLandung, true);
         }
     </script>
 
