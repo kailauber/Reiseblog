@@ -1,3 +1,44 @@
+/* Font faces */
+
+/* latin-ext */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwaPGR_p.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+/* Base Styles */
+
 html {
     background-color: #0b0b0b;
     font-family: 'Lato', sans-serif;
@@ -7,37 +48,47 @@ html {
     padding-top: 5px;
 }
 
-/*scrollbar*/
+body,
+h2,
+p,
+ul,
+li,
+a {
+    color: white;
+}
 
- ::-webkit-scrollbar {
+/* Scrollbar */
+
+::-webkit-scrollbar {
     width: 10px;
 }
-h2, ul, li {
-    color: white; 
-}
 
-
-/* Track */
-
- ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }
 
-
-/* Handle */
-
- ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: rgb(81, 81, 81);
 }
 
- ::-webkit-scrollbar-thumb:window-inactive {
+::-webkit-scrollbar-thumb:window-inactive {
     background: rgb(81, 81, 81);
 }
 
+/* Common Elements */
 
-/*title*/
+p {
+    text-align: center;
+    font-size: 20px;
+}
+
+.section {
+    padding: 25px 0;
+}
+
+/* Headers */
 
 #number {
     font-size: 50px;
@@ -47,22 +98,24 @@ h2, ul, li {
     font-size: 25px;
 }
 
-p {
-    text-align: center;
-    font-size: 20px;
-    color: white;
-}
-
+/* Paragraphs */
 
 p2 {
     font-size: 25px;
-    color: white;
 }
 
 p3 {
     font-size: 22px;
-    color: white;
 }
+
+/* Anchor */
+
+a {
+    color: #fbd23b;
+    text-decoration: none;
+}
+
+/* Space */
 
 #space {
     height: auto;
@@ -74,62 +127,21 @@ p3 {
     padding-top: 250px;
 }
 
-a {
-    color: #fbd23b;
-}
+/* Logo */
 
-
-
-@media only screen and (max-width: 425px) {
-    #space {
-        width: 350px;
-        padding-top: 250px;
-    }
-}
-
-.section {
-    padding-bottom: 50px;
-    padding-top: 25px
-}
-
-.toolsimg {
-    width: 50%;
-    margin: auto;
-    display: block;
-    padding-top: 25px;
-}
-
-@media only screen and (max-width: 425px) {
-    .toolsimg {
-        width: 80%;
-    }
-}
-
-.hobbiesimg {
-    display: block;
-    margin: auto;
-    width: 93%;
-}
-
-@media only screen and (max-width: 425px) {
-    .hobbiesimg {
-        width: 100%;
-    }
-}
-
-
-/*logo*/
 .logo {
     position: absolute;
     left: 0;
     top: 5px;
-    width: 200px; /* adjust the size to fit your logo */
-    height: 200px; /* adjust the size to fit your logo */
-    overflow: hidden; /* hide any parts of the logo that fall outside the circle */
-  }
-  
+    width: 200px;
+    /* adjust the size to fit your logo */
+    height: 200px;
+    /* adjust the size to fit your logo */
+    overflow: hidden;
+    /* hide any parts of the logo that fall outside the circle */
+}
 
-/*Drop-down Menu*/
+/* Dropdown Menu */
 
 .dropbtn {
     padding: 16px;
@@ -137,36 +149,25 @@ a {
     margin-right: 15px;
     cursor: pointer;
     background-color: transparent;
-    background-image: url("dropdown.png")
+    background-image: url("dropdown.png");
 }
 
-
 /* Dropdown button on hover & focus */
-
 .dropbtn:hover,
 .dropbtn:focus {
     border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -moz-transition: all .30s;
-    -o-transition: all .30s;
-    -webkit-transition: all .30s;
     transition: all .30s;
     text-decoration: none;
     outline: 0;
 }
 
-
-/* The container <div> - needed to position the dropdown content */
+/* Dropdown Container */
 
 .dropdown {
     position: absolute;
     top: 15px;
     right: 0;
 }
-
-
-/* Dropdown Content (Hidden by Default) */
 
 .dropdown-content {
     padding-top: 10px;
@@ -177,43 +178,24 @@ a {
     z-index: 1;
 }
 
-
-/* Links inside the dropdown */
-
 .dropdown-content a {
     color: #fbd23b;
     padding: 12px 16px;
-    text-decoration: none;
     display: block;
     font-size: 20px;
-    border-bottom: 2px solid transparent;
-    border-top: 2px solid transparent;
+    border: 2px solid transparent;
     letter-spacing: 1px;
 }
 
-@media only screen and (max-width: 375px) {
-    .dropdown-content a {
-        background-color: rgba(0, 0, 0, 0.57);
-    }
-}
-
-
-/* Change color of dropdown links on hover */
-
 .dropdown-content a:hover {
-    border-bottom: 2px solid #fbd23b;
-    border-top: 2px solid #fbd23b;
+    border: 2px solid #fbd23b;
 }
-
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 
 .show {
     display: block;
 }
 
-
-/*particles*/
+/* Particles */
 
 #particles-js {
     width: 100vw;
@@ -224,9 +206,12 @@ a {
     left: 0;
 }
 
+/* Impressum */
+
 .impressum {
     text-align: center;
-    padding: 1em; /* add some space around the text */
+    padding: 1em;
+    /* add some space around the text */
 }
 
 .dash-btn {
@@ -237,16 +222,17 @@ a {
     background-color: #fff;
     color: #333;
     cursor: pointer;
-    text-decoration: none;
 }
 
 .dash-btn:hover {
     background-color: #333;
     color: #fff;
 }
-  
+
+/* Footer */
 
 .footer {
+    box-sizing: border-box;
     letter-spacing: 1px;
     font-weight: 500;
     color: #fbd23b;
@@ -257,12 +243,9 @@ a {
     font-size: 14px;
     width: 100%;
     border: 1px solid #fbd23b;
-
 }
 
 .footer a {
-    color: #fbd23b;
-    text-decoration: none;
     display: block;
     margin-bottom: 15px;
 }
@@ -270,6 +253,8 @@ a {
 .footer a:last-child {
     margin-bottom: 0;
 }
+
+/* Gif Container */
 
 .gif-container {
     display: flex;
@@ -283,8 +268,10 @@ a {
 .gif {
     max-width: 100%;
     border: 1px solid #fbd23b;
-
 }
+
+/* Video Container */
+
 .video-container {
     display: flex;
     flex-direction: column;
@@ -292,92 +279,222 @@ a {
     align-items: center;
 }
 
-#videoKellerSubtitles, #videoOsternAudio {
+#videoKellerSubtitles,
+#videoOsternAudio,
+#videoLandungButtons {
     display: flex;
     justify-content: center;
     gap: 5px;
     margin-top: 5px;
 }
 
+/* Image Grid */
 
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 images per row */
     gap: 10px;
-    padding: 10px;
+    max-width: 80%;
+    margin: 0 auto;
+    /* Center the image grid */
+    padding: 25px;
+    /* Add space around the entire image grid */
     box-sizing: border-box;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
 }
 
 
 .image-grid img {
-    max-width: 100%; /* Ensure image does not overflow its container */
-    border: 1px solid #fbd23b; /* Add border to images */
+    max-width: 100%;
+    /* Ensure image does not overflow its container */
+    border: 1px solid #fbd23b;
+    /* Add border to images */
     box-sizing: border-box;
     transition: 0.3s;
+
+}
+
+
+.image-grid div {
+    max-width: 100%;
+    /* Ensure image does not overflow its container */
+    /* Add border to images */
+    box-sizing: border-box;
+    transition: 0.3s;
+
 }
 
 .image-grid img:hover {
-    transform: scale(1.05); /* Zoom in a little on hover */
+    transform: scale(1.05);
+    /* Zoom in a little on hover */
 }
 
 .image-grid video {
-    max-width: 100%; /* Ensure video does not overflow its container */
-    border: 1px solid #fbd23b; /* Add border to videos to match images */
+    max-width: 100%;
+    /* Ensure video does not overflow its container */
+    border: 1px solid #fbd23b;
+    /* Add border to videos to match images */
     box-sizing: border-box;
     transition: 0.3s;
-    width: 100%; /* Make video fill its container */
-    height: auto; /* Let video height adjust automatically to keep aspect ratio */
-    object-fit: cover; /* Ensure video cover its container completely */
+    width: 100%;
+    /* Make video fill its container */
+    height: auto;
+    /* Let video height adjust automatically to keep aspect ratio */
+    object-fit: cover;
+    /* Ensure video cover its container completely */
 }
 
 .image-grid video:hover {
-    transform: scale(1.05); /* Zoom in a little on hover */
+    transform: scale(1.05);
+    /* Zoom in a little on hover */
 }
 
-@media only screen and (max-width: 1200px) {
-    .image-grid img, .image-grid video {
-        max-width: 90%;
+/* Responsive Design */
+
+/* Small Desktop Design */
+@media (max-width: 900px) {
+    /* Responsive adjustments for screens 900px and smaller */
+
+    .footer,
+    .gif-container,
+    .video-container,
+    .image-grid {
+        padding: 20px;
+    }
+
+    .dropdown {
+        top: 65px;
+    }
+
+    .logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    #space {
+        padding-top: 100px;
+        width: 100%;
+    }
+
+    p,
+    #title,
+    p2,
+    p3 {
+        font-size: 16px;
+    }
+
+    #number {
+        font-size: 40px;
+    }
+
+    .impressum {
+        padding: 0.5em;
+    }
+
+    .dropdown-content a {
+        font-size: 18px;
     }
 }
 
-@media only screen and (max-width: 600px) {
-    .image-grid img, .image-grid video {
-        max-width: 100%;
+/* Tablet Design */
+@media (max-width: 900px) and (min-width: 601px) {
+    /* Responsive adjustments for tablet screens */
+
+    .footer,
+    .gif-container,
+    .video-container,
+    .image-grid {
+        padding: 30px;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 images per row */
+    }
+
+
+    .dropdown {
+        top: 75px;
+    }
+
+    .logo {
+        width: 200px;
+        height: 200px;
+    }
+
+    #space {
+        padding-top: 110px;
+        width: 100%;
+    }
+
+    p,
+    #title,
+    p2,
+    p3 {
+        font-size: 18px;
+    }
+
+    #number {
+        font-size: 45px;
+    }
+
+    .impressum {
+        padding: 1em;
+    }
+
+    .dropdown-content a {
+        font-size: 20px;
     }
 }
 
-/* latin-ext */
-@font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-  }
-  /* latin */
-  @font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
-  /* latin-ext */
-  @font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwaPGR_p.woff2) format('woff2');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-  }
-  /* latin */
-  @font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
-  
+/* Mobile Design */
+@media (max-width: 600px) {
+    /* Responsive adjustments for mobile screens */
+
+    .footer,
+    .gif-container,
+    .video-container,
+    .image-grid {
+        padding: 15px;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(1, 1fr);
+        /* 1 image per row */
+    }
+
+    .dropdown {
+        top: 55px;
+    }
+
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    #space {
+        padding-top: 90px;
+        width: 100%;
+    }
+
+    p,
+    #title,
+    p2,
+    p3 {
+        font-size: 14px;
+    }
+
+    #number {
+        font-size: 35px;
+    }
+
+    .impressum {
+        padding: 0.3em;
+    }
+
+    .dropdown-content a {
+        font-size: 16px;
+    }
+}

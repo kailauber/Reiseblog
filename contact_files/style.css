@@ -273,6 +273,7 @@ p3 {
 }
 
 .footer {
+  box-sizing: border-box;
   letter-spacing: 1px;
   font-weight: 500;
   color: #fbd23b;

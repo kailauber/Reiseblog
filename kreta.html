@@ -4,11 +4,10 @@
 <head>
     <title>Reiseblog | KRETA</title>
     <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="license" content="https://creativecommons.org/publicdomain/zero/1.0/">
     <link href="reise_files/style.css" rel="stylesheet" type="text/css" />
-    <link href="contact_files/css.css" rel="stylesheet" />
     <link href="reise_files/big.png" rel="icon" />
-    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
-
 </head>
 
 <body>
@@ -62,7 +61,14 @@
 
         <div class="video-container">
             <video id="videoLandung" controls></video>
+            <div id="videoLandungButtons">
+                <a class="dash-btn" onclick="playVideo('videoLandung')">Play</a>
+                <a class="dash-btn" onclick="pauseVideo('videoLandung')">Pause</a>
+                <a class="dash-btn" onclick="volumeUp('videoLandung')">Volume Up</a>
+                <a class="dash-btn" onclick="volumeDown('videoLandung')">Volume Down</a>
+            </div>
         </div>
+
         <div class="video-container">
             <video id="videoOstern" controls></video>
             <div id="videoOsternAudio">
@@ -94,7 +100,33 @@
     <script src="reise_files/particles.js" type="text/javascript"></script>
     <script src="reise_files/app.js" type="text/javascript"></script>
     <script src="reise_files/menu.js" type="text/javascript"></script>
+    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
     <script>
+
+        function playVideo(videoId) {
+            var video = document.getElementById(videoId);
+            video.play();
+        }
+
+        function pauseVideo(videoId) {
+            var video = document.getElementById(videoId);
+            video.pause();
+        }
+
+        function volumeUp(videoId) {
+            var video = document.getElementById(videoId);
+            if (video.volume < 1) {
+                video.volume += 0.1;
+            }
+        }
+
+        function volumeDown(videoId) {
+            var video = document.getElementById(videoId);
+            if (video.volume > 0) {
+                video.volume -= 0.1;
+            }
+        }
+
         function switchSubtitleLanguage(videoId, language) {
             var video = document.querySelector("#" + videoId);
             var tracks = video.textTracks;
@@ -145,8 +177,6 @@
             playerLandung.initialize(document.querySelector("#videoLandung"), urlLandung, false);
         }
     </script>
-
-    <!-- End of Scripts -->
 </body>
 
 </html>
