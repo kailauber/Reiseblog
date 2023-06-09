@@ -66,12 +66,9 @@
         <div class="video-container">
             <video id="videoOstern" controls></video>
             <div id="videoOsternAudio">
-                <a href="javascript:void(0);" class="dash-btn" onclick=switchAudioTrack(playerOstern,2)>Audio 1</a>
-                <a href="javascript:void(0);" class="dash-btn" onclick=switchAudioTrack(playerOstern,3)>Audio 2</a>
+                <button class="dash-btn" onclick="switchAudioTrack(playerOstern)">Switch Track</button>
             </div>
-
         </div>
-
 
 
     </div>
@@ -112,13 +109,19 @@
                 }
             }
         }
-        function switchAudioTrack(player, trackId) {
+        function switchAudioTrack(player) {
             var audioTracks = player.getTracksFor('audio');
-            var idx = parseInt(trackId);
-            if (idx >= 0 && idx < audioTracks.length) {
-                player.setCurrentTrack(audioTracks[idx]);
+            if (audioTracks.length >= 2) {
+                var currentTrackId = player.getCurrentTrackFor('audio').id;
+                var otherTrack = audioTracks.find(function (track) {
+                    return track.id !== currentTrackId;
+                });
+                if (otherTrack) {
+                    player.setCurrentTrack(otherTrack);
+                }
             }
         }
+
 
 
         window.onload = function () {
@@ -126,7 +129,7 @@
             video.load();
             switchSubtitleLanguage('videoKeller', 'de');
 
-            var urlOstern = 'media/kreta/videos/ostern/manifest.mpd';
+            var urlOstern = 'media/kreta/videos/ostern/manifest/manifest.mpd';
             var urlLandung = 'media/kreta/videos/landung/landung_final.mpd';
             playerOstern = dashjs.MediaPlayer().create();
             playerLandung = dashjs.MediaPlayer().create();
