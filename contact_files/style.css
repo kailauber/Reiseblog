@@ -273,22 +273,30 @@ p3 {
 }
 
 .footer {
-  letter-spacing: 3px;
-  font-weight: 1000;
+  letter-spacing: 1px;
+  font-weight: 500;
   color: #fbd23b;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: none;
   background: #0B0B0B;
-  padding: 20px;
-  margin-right: 100px;
-  font-size: 13px;
+  padding: 40px;
+  font-size: 14px;
   width: 100%;
+  border: 1px solid #fbd23b;
+
 }
 
 .footer a {
   color: #fbd23b;
   text-decoration: none;
+  display: block;
+  margin-bottom: 15px;
 }
+
+.footer a:last-child {
+  margin-bottom: 0;
+}
+
 
 /* latin-ext */
 @font-face {

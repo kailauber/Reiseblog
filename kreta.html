@@ -16,9 +16,8 @@
     <div class="dropdown">
         <button class="dropbtn" onclick="myFunction()"></button>
         <div class="dropdown-content" id="myDropdown">
-            <a href="index.html">HOME</a>
-            <a href="malle.html">MALLE</a>
-            <a href="reise.html">REISE</a>
+            <a href="entermalle.html">MALLE</a>
+            <a href="contact.html">KONTAKT</a>
         </div>
     </div>
     <div id="space">
@@ -51,6 +50,7 @@
                 <track src="media/kreta/videos/keller_subtitle_fr.vtt" kind="subtitles" srclang="fr" label="French">
             </video>
             <div id="videoKellerSubtitles">
+                <a href="javascript:void(0);" class="dash-btn" onclick="hideSubtitles()">Hide</a>
                 <a href="javascript:void(0);" class="dash-btn"
                     onclick="switchSubtitleLanguage('videoKeller', 'de')">German</a>
                 <a href="javascript:void(0);" class="dash-btn"
@@ -66,7 +66,7 @@
         <div class="video-container">
             <video id="videoOstern" controls></video>
             <div id="videoOsternAudio">
-                <button class="dash-btn" onclick="switchAudioTrack(playerOstern)">Switch Track</button>
+                <a class="dash-btn" onclick="switchAudioTrack(playerOstern)">Switch Track</a>
             </div>
         </div>
 
@@ -95,9 +95,6 @@
     <script src="reise_files/app.js" type="text/javascript"></script>
     <script src="reise_files/menu.js" type="text/javascript"></script>
     <script>
-        var playerOstern;
-        var playerLandung;
-
         function switchSubtitleLanguage(videoId, language) {
             var video = document.querySelector("#" + videoId);
             var tracks = video.textTracks;
@@ -109,6 +106,16 @@
                 }
             }
         }
+
+        function hideSubtitles() {
+            var video = document.getElementById('videoKeller');
+            var tracks = video.textTracks;
+            for (var i = 0; i < tracks.length; i++) {
+                var track = tracks[i];
+                track.mode = 'disabled';
+            }
+        }
+
         function switchAudioTrack(player) {
             var audioTracks = player.getTracksFor('audio');
             if (audioTracks.length >= 2) {
@@ -127,14 +134,15 @@
         window.onload = function () {
             var video = document.getElementById('videoKeller');
             video.load();
-            switchSubtitleLanguage('videoKeller', 'de');
+            hideSubtitles();
+
 
             var urlOstern = 'media/kreta/videos/ostern/manifest/manifest.mpd';
             var urlLandung = 'media/kreta/videos/landung/landung_final.mpd';
             playerOstern = dashjs.MediaPlayer().create();
             playerLandung = dashjs.MediaPlayer().create();
-            playerOstern.initialize(document.querySelector("#videoOstern"), urlOstern, true);
-            playerLandung.initialize(document.querySelector("#videoLandung"), urlLandung, true);
+            playerOstern.initialize(document.querySelector("#videoOstern"), urlOstern, false);
+            playerLandung.initialize(document.querySelector("#videoLandung"), urlLandung, false);
         }
     </script>
 
