@@ -305,6 +305,23 @@ a {
     align-items: center;
 }
 
+figure {
+    border: thin #fbd23b solid;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    max-width: 220px;
+    margin: auto;
+}
+
+figcaption {
+    background-color: #333;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+}
+
 
 .image-grid img {
     max-width: 100%;
