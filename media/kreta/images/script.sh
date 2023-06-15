@@ -6,7 +6,7 @@ mkdir -p medium
 mkdir -p large
 
 # Scale and move images to respective directories
-for j in *.JPG
+for j in *.jpg
 do
     filename=$(basename -- "$j")
     ffmpeg.exe -i "$j" -vf scale=800:-1 "small/Small-${filename}"
