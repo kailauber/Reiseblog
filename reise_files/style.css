@@ -323,6 +323,14 @@ figcaption {
 }
 
 
+.image-container {
+    display: flex;
+    justify-content: space-evenly; /* Gleichmäßiger Raum zwischen den Bildern */
+    flex-wrap: wrap; /* Erlaubt das Umfließen auf die nächste Zeile, falls der Platz nicht ausreicht */
+}
+
+
+
 .image-grid img {
     max-width: 100%;
     /* Ensure image does not overflow its container */
