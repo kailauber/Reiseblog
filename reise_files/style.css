@@ -379,8 +379,8 @@ figcaption {
 /* Responsive Design */
 
 /* Small Desktop Design */
-@media (max-width: 900px) {
-    /* Responsive adjustments for screens 900px and smaller */
+@media (max-width: 1200px) and (min-width: 901px) {
+    /* Responsive adjustments for screens 1200px and smaller */
 
     .footer,
     .gif-container,
